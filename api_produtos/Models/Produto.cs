@@ -13,17 +13,18 @@ namespace api_produtos.Models
         public float Preco { get; set; }
         public int Quantidade { get; set; }
 
-        public Fabricante Fabricante { get; set; }
-        public Categoria Categoria { get; set; }
-
-        public Produto(int id, string nome, int idFabricante, int idCategoria, float preco, int quantidade)
+        public Produto() { }
+        //public Fabricante Fabricante { get; set; }
+        //public Categoria Categoria { get; set; }
+        /*
+        public Produto(int id, string nome, float preco, int quantidade, Fabricante fabricante, Categoria categoria)
         {
             Id = id;
             Nome = nome;
-            IdFabricante = idFabricante;
-            IdCategoria = idCategoria;
             Preco = preco;
             Quantidade = quantidade;
-        }
+            Fabricante = fabricante;
+            Categoria = categoria;
+        }*/
     }
 }
