@@ -79,6 +79,24 @@ namespace api_produtos.Controllers
             }
         }
 
-        //fazer apagar
+        [HttpDelete("DeletarProduto")]
+        public async Task<ActionResult> ApagarProduto([FromHeader] int id_deletar)
+        {
+            var obj = await _iProduto.BuscarPorId(id_deletar);
+            if (obj == null)
+            {
+                return BadRequest($"ID: {id_deletar} inexistente.");
+            }
+
+            try
+            {
+                await _iProduto.ApagarProduto(id_deletar);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

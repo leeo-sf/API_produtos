@@ -8,5 +8,6 @@ namespace api_produtos.Repositorio.Interface
         Task<Produto> BuscarPorId(int id);
         Task CadastrarNovoProduto(Produto produto);
         Task EditarProduto(int id, Produto produto);
+        Task ApagarProduto(int id);
     }
 }
